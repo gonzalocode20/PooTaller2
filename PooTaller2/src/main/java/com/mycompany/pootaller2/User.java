@@ -16,11 +16,10 @@ import javax.persistence.Table;
  *
  * @author PRIME
  */
-
 @Entity
-@Table(name="user")
+@Table(name = "user")
 public class User {
-    
+
     @Id
     @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,6 +31,15 @@ public class User {
     private String password;
 
     public User() {
+    }
+
+    public User(int id, String name, String phone, String email, String username, String password) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.username = username;
+        this.password = password;
     }
 
     public int getId() {
@@ -81,5 +89,9 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-     
+
+    public void imprimir() {
+        System.out.println(name);
+    }
+
 }
